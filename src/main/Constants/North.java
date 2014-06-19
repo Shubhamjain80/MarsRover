@@ -2,12 +2,9 @@ package Constants;
 
 import Model.RoverPosition;
 
-/**
- * Created by shubham on 17/06/14.
- */
 public class North extends Direction {
     public North() {
-        value = "N" ;
+        value = "N";
     }
 
     @Override

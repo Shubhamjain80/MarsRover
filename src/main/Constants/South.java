@@ -2,9 +2,6 @@ package Constants;
 
 import Model.RoverPosition;
 
-/**
- * Created by shubham on 17/06/14.
- */
 public class South extends Direction {
     public South() {
         value = "S";

@@ -3,25 +3,21 @@ package Model;
 public class Rover {
     public RoverPosition position;
 
-    public Rover(String input){
-        makeRoverFromInput(input);
-    }
-
-    private void makeRoverFromInput(String input) {
-        String[]inputForPosition = input.split(" ");
-        if(inputForPosition.length != 3)
+    public Rover(String input) {
+        String[] inputForPosition = input.split(" ");
+        if (inputForPosition.length != 3)
             throw new IllegalArgumentException();
         RoverPosition roverPosition = new RoverPosition(inputForPosition);
         initializeRoverWith(roverPosition);
     }
 
     public void moveRover(char input) {
-        position.moveRover(input);
+        position.changePosition(input);
         throwExceptionIfPositionIsNotValid(position);
     }
 
     public String outputInFormattedString() {
-       return position.outPutInFormattedString();
+        return position.outPutInFormattedString();
     }
 
     private void initializeRoverWith(RoverPosition position) {
@@ -31,12 +27,12 @@ public class Rover {
 
     private void throwExceptionIfPositionIsNotValid(RoverPosition position) {
         if (!positionIsInValidRange(position))
-            throw new IndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException("Please give valid input");
     }
 
     private boolean positionIsInValidRange(RoverPosition position) {
         return position.xPosition >= 0 && position.yPosition >= 0 &&
-               position.xPosition <= Plateau.instance.xLimit && position.yPosition <= Plateau.instance.yLimit;
+                position.xPosition <= Plateau.instance.xLimit && position.yPosition <= Plateau.instance.yLimit;
     }
 
 }

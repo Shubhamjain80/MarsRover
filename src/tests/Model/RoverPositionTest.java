@@ -1,14 +1,10 @@
 package Model;
 
 import Constants.Direction;
-import Constants.East;
-import Constants.North;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertThat;
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,7 +19,13 @@ public class RoverPositionTest {
 
     @Before
     public void setUp() throws Exception {
-        String[] inputArrayForPosition = {"3","3","E"} ;
+        String[] inputArrayForPosition = {"3", "3", "E"};
         position = new RoverPosition(inputArrayForPosition);
+    }
+
+    @Test
+    public void testForFormattedOutput() throws Exception {
+        assertEquals("33E", position.outPutInFormattedString());
+
     }
 }

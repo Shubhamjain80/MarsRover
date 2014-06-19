@@ -9,11 +9,11 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 
 
 public class RoverTest {
     Direction direction;
+
     @Before
     public void setUp() throws Exception {
         Plateau plateau = new Plateau("5 5");
@@ -49,7 +49,7 @@ public class RoverTest {
         Rover rover = new Rover("3 3 E");
         rover.moveRover('M');
         assertEquals(rover.position.direction.getClass(), East.class);
-        assertEquals(rover.position.xPosition,4);
+        assertEquals(rover.position.xPosition, 4);
     }
 
     @Test(expected = IndexOutOfBoundsException.class)

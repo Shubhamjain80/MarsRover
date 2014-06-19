@@ -2,23 +2,29 @@ package Constants;
 
 import Model.RoverPosition;
 
-import javax.swing.text.Position;
+import java.util.HashMap;
+import java.util.Map;
 
-/**
- * Created with IntelliJ IDEA.
- * User: shubham
- * Date: 16/06/14
- * Time: 10:13 PM
- * To change this template use File | Settings | File Templates.
- */
 public abstract class Direction {
-    public static String value;
-
-    public String getValue() {
-        return value;
-    }
+    public String value;
 
     public abstract Direction getLeftDirection();
-    public abstract Direction getRightDirection() ;
+
+    public abstract Direction getRightDirection();
+
     public abstract void moveForward(RoverPosition position);
+    public static Direction getDirectionForString(String directionString) {
+        Map<String, Direction> directionMap = new HashMap();
+        directionMap.put("N", new North());
+        directionMap.put("S", new South());
+        directionMap.put("E", new East());
+        directionMap.put("W", new West());
+        if (!directionMap.containsKey(directionString))
+            throw new IllegalArgumentException("Wrong direction");
+        return directionMap.get(directionString);
+    }
+
+    public String getOutput(String output) {
+        return output+value;
+    }
 }

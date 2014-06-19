@@ -4,7 +4,7 @@ import Model.Plateau;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class ParserTest {
 
@@ -16,8 +16,8 @@ public class ParserTest {
 
     @Test
     public void testForParsingTheInput() throws Exception {
-        Parser parser = new Parser("1 2 N","LMLMLMLMM");
+        Parser parser = new Parser("1 2 N", "LMLMLMLMM");
         String output = parser.parseInput();
-        assertEquals(output,"13N");
+        assertEquals(output, "13N");
     }
 }

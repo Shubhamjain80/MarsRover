@@ -2,12 +2,9 @@ package Constants;
 
 import Model.RoverPosition;
 
-/**
- * Created by shubham on 17/06/14.
- */
 public class East extends Direction {
     public East() {
-        value="E";
+        value = "E";
     }
 
     @Override
@@ -22,7 +19,7 @@ public class East extends Direction {
 
     @Override
     public void moveForward(RoverPosition position) {
-          position.increaseXPosition();
+        position.increaseXPosition();
     }
 
 }

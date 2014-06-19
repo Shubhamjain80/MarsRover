@@ -17,14 +17,14 @@ public class Parser {
         this.inputForMovingRover = inputForMovingRover;
     }
 
-    public String parseInput(){
+    public String parseInput() {
         rover = new Rover(roverPosition);
         return moveRover(inputForMovingRover);
     }
 
     private String moveRover(String inputForMovingRover) {
-        for (int i = 0; i < inputForMovingRover.length(); i++) {
-            char input = inputForMovingRover.charAt(i);
+        for (Integer indexOfChar = 0; indexOfChar < inputForMovingRover.length(); indexOfChar++) {
+            char input = inputForMovingRover.charAt(indexOfChar);
             rover.moveRover(input);
         }
         return rover.outputInFormattedString();
